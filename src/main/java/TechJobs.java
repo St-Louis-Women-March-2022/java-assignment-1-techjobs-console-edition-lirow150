@@ -25,7 +25,7 @@ public class TechJobs {
         actionChoices.put("search", "Search");
         actionChoices.put("list", "List");
 
-        System.out.println("Welcome to LaunchCode's TechJobs App!");
+        System.out.println("Welcome to LaunchCode's TechJobs App!\n");
 
         // Allow the user to search until they manually quit
         while (true) {
@@ -44,7 +44,7 @@ public class TechJobs {
 
                     ArrayList<String> results = JobData.findAll(columnChoice);
 
-                    System.out.println("\n*** All " + columnChoices.get(columnChoice) + " Values ***");
+                    System.out.println("*** All " + columnChoices.get(columnChoice) + " Values ***");
 
                     // Print list of skills, employers, etc
                     for (String item : results) {
@@ -55,10 +55,10 @@ public class TechJobs {
             } else { // choice is "search"
 
                 // How does the user want to search (e.g. by skill or employer)
-                String searchField = getUserSelection("Search by:", columnChoices);
+                String searchField = getUserSelection("\nSearch by:", columnChoices);
 
                 // What is their search term?
-                System.out.println("\nSearch term:");
+                System.out.println("\rSearch term:\r");
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
@@ -87,7 +87,7 @@ public class TechJobs {
 
         do {
 
-            System.out.println("\n" + menuHeader);
+            System.out.println(menuHeader);
 
             // Print available choices
             for (int j = 0; j < choiceKeys.length; j++) {
@@ -124,13 +124,13 @@ public class TechJobs {
 
             for (int i = 0; i < someJobs.size(); i++) {
 
-                System.out.println("\n *****");
+                System.out.println("*****");
 
                      //represents key/value pairs within HashMaps
                 for (Map.Entry<String, String> job : someJobs.get(i).entrySet()) {
-                    System.out.println(" " + job.getKey() + ": "  + job.getValue());
+                    System.out.println(job.getKey() + ": "  + job.getValue());
                 }
-                System.out.println(" *****");
+                System.out.println("*****\r");
             }
         } else {
             System.out.println("No Results");

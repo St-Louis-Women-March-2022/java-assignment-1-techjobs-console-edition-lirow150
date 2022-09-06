@@ -106,19 +106,27 @@ public class JobData {
             //to store the map elements
             for (Map.Entry<String, String> column : row.entrySet()) {
                 //get keys from column string
-                String a = column.getKey().toLowerCase();
-                String b = column.getKey().toLowerCase();
+
+                String b = column.getValue();
 
                        //case insensitive
-                       a = a.toLowerCase();
+
                        b = b.toLowerCase();
 
+
+
+
                 //add values to row from both strings
-                if (a.contains(value) || b.contains(value)) {
+                if (b.contains(value.toLowerCase())  ) {
                     jobs.add(row);
 
+
+
                 }
+
             }
+
+
         }
         return jobs;
     }
